@@ -38,6 +38,7 @@ GIT COMMANDS:
 31. git stash pop 							: Restores the changes saved in a stash and deletes the stash from the list.
 32. git stash drop stash@{0} 				: This will delete the stash@{0} entry from the stash list.
 33. git stash clear 						:  This will permanently delete all your stashed changes. Use it with caution.
+34. git remote -v                           : This will show active repository in directory for fetcha and push.
 
 commit is used as a savepoint so that in future we can able to rollback the previous content. In case if the current project fails to analyse previous modified code.
 
