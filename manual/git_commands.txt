@@ -1,0 +1,67 @@
+git - Distributed Version Control System
+
+version control part helps you to track the code changes over time
+distributed means that every one in the project have the compelete copy of the project including the entire history of modification
+
+GIT COMMANDS: 
+1. 	git--version 							: to get the version of the current installed version
+2. 	git config --global user.name <name> 	: To configure name 
+3. 	git config --global user.email <mail> 	: To configure email
+4. 	git init 								: To initialise a repository ( a hidden .git folder is created, it will handle commit history, remote repo, branches, etc)
+5. 	git config --global init.defaultBranch <main> 			: set the default name for the initial branch when you create a new repository
+6. 	git status 								: to view the status of the repo
+7. 	git add filename 						: staging the file for the next commit in Git. A temporary area where you mark changes you want to commit
+8. 	git add ./ 								: to staging all the files in the repo
+9. 	git commit -m 'message' 				: creating a commit (a snapshot of your staged changes) with a message that describes what was changed. The file is now saved in your Git history with that message. It’s not yet uploaded to GitHub
+10. git log 								: To view the commit status that are done, gives author details, timestamp of the commit
+11. git checkout <hash>						: It is used to go back to the previous commit. Hash value is getted using git log. The files modified at the current stage will be remain unchanged and stored safetly but the user won't showed since the HEAD is moved to previous commit so it is changed to the previous commit. 
+12. git checkout main 						: To move back to the original main (last commited stage)
+13. git branch -M main 						: This command is used to rename the current branch to main.
+14. git remote add origin <https:link> 		: This connects your local Git repository to a remote GitHub repository named origin, Local nickname for the remote repo (can be anything; default is origin).
+15. git push -u origin main 				:It pushes the contents of your local main branch (with all commits) to the remote GitHub repository named origin
+16. git branch branch_name 					: This will create you a new branch
+17. git checkout branch_name 				: To switch to a branch
+18. git checkout main 						: To switch back to main branch
+19. git checkout -b branch-name 			: This will create a new branch and switch directly to this newly created branch
+20. git branch new_branch source_branch		: This will create a new branch associated with the source branch name specified.
+21. git push --set-upstream origin branch	: The upstream is a remote branch  that your local branch tracks, when u set upstream you linking the remote branch to local branch
+21. git push -u origin branch_name 			: same as --set upstream (For first commit it is neccessary to do this)
+22. git pull 								: Used to pull the data from remote to local repo
+23. git merge branch_name 					: Used to merge the branches ( use github [recommended])
+24. git reset <hash-commit> 				: Used to reset (--mixing)
+25. git reset --soft <hash-commit> 			: this will soft reset 
+26. git reset --hard <commit-hash> 			: This will Discard all the changes 
+27. git revert <commit-hash> 				: Is similar to merge conflicts 
+28. git stash 								: Temporarily saves uncommitted changes 
+29. git stash list 							: Shows all the stashed changes that you've saved using git stash.
+30. git stash apply <stash-name> 			: Restores the changes saved in a stash without deleting the stash entry.
+31. git stash pop 							: Restores the changes saved in a stash and deletes the stash from the list.
+32. git stash drop stash@{0} 				: This will delete the stash@{0} entry from the stash list.
+33. git stash clear 						:  This will permanently delete all your stashed changes. Use it with caution.
+
+
+commit is used as a savepoint so that in future we can able to rollback the previous content. In case if the current project fails to analyse previous modified code.
+
+Git is used to track the changes you have made. Github is the cloud platform is used to store the repo and collaborate with the others. To push your local project to github need to link a repo into a remote.
+
+two types of repository - local repository, remote repository
+
+1. Local repository : it is a repository created at the local system using git init. Changes made are private until You moved into a remote repo.
+2. Remote repository : It is a repo is a version of project stored in a server (git lab, big bucket, github), used to share the code with collaborates. keeping projects sync
+
+When collaborating a repo we have 2 repository 
+1. local repository that are all the collaborates have.
+2. Common remote repo everyone sync the code
+
+
+
+MERGE CONFLICTS : Merge conflicts means when two or more changes done by the collaborates on a file line git confuses to choose which one to merge, in that case 
+git ask which user changes to push
+
+
+git -reset :
+
+1. soft-resest : simply moves the specified commit in history but keeps changes staged in the working directory,
+git resest --soft <commit-hash>
+2. Mixed reset : git reset <commit-hash> it  moves the specified commit in histroy but unstages the changes and keep them in the working directory but they won't staged 
+3. Hard Resest : git reset --hard <commit-hash> 
