@@ -39,7 +39,6 @@ GIT COMMANDS:
 32. git stash drop stash@{0} 				: This will delete the stash@{0} entry from the stash list.
 33. git stash clear 						:  This will permanently delete all your stashed changes. Use it with caution.
 
-
 commit is used as a savepoint so that in future we can able to rollback the previous content. In case if the current project fails to analyse previous modified code.
 
 Git is used to track the changes you have made. Github is the cloud platform is used to store the repo and collaborate with the others. To push your local project to github need to link a repo into a remote.
